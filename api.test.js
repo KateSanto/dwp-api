@@ -5,15 +5,28 @@
 // const mockAxios = require('axios');
 const userRoutes = require('./routes/users');
 const supertest = require('supertest');
+const appRouter = require('./routes/routes')
+
+
+// test('tests the base route and returns "Array" for typeof data', async () => {
+//     const data = await userRoutes();
+//     expect(typeof data).toEqual("Array");
+//   });
 
 
 describe("Testing API", () => {
-    test("tests the base route and returns 200 for response status", () => {
-        const response = supertest(userRoutes).get('/');
+    test("tests the base route and returns 200 for response status", async() => {
+        const response = await supertest(userRoutes).get('/');
         //need to troubleshoot this. When running API in terminal, status is 200, but test fails.
         expect(response.status).toEqual(200);
     });
 })
+
+
+
+
+
+
 
 
 //////////

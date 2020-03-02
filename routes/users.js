@@ -11,6 +11,7 @@ const userRoutes = () => {
             }
             console.log(filteredUsers);
             console.log(response.status);
+
         })
         .catch((error) => {
             console.log(error);
